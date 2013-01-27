@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/jquery.countdown.css' />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/jquery-ui-1.10.0.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap-responsive.min.css" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style type="text/css">
+      <%= countdown.custom_css %>
+      body {
+        background-image: url(<%= countdown.background_image %>);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title-container"><h1><%= countdown.title %></h1></div>
+      <div class="countdown-container flip-clock" data-until="<%= countdown.until.toJSON() %>"></div>
+      <div class="description-container"><p><%= countdown.description %></p></div>
+    </div>
+
+    <!-- load scripts late -->
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.0.0.min.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery-ui-1.10.0.custom.min.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery-ui-timepicker-addon.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascripts/application.js"></script>
+  </body>
+</html>

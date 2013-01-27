@@ -1,0 +1,109 @@
+.ui-timepicker-div .ui-widget-header {
+  margin-bottom: 8px;
+}
+.ui-timepicker-div dl {
+  text-align: left;
+}
+.ui-timepicker-div dl dt {
+  height: 25px;
+  margin-bottom: -25px;
+}
+.ui-timepicker-div dl dd {
+  margin: 0 10px 10px 65px;
+}
+.ui-timepicker-div td {
+  font-size: 90%;
+}
+.ui-tpicker-grid-label {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.ui-timepicker-rtl {
+  direction: rtl;
+}
+.ui-timepicker-rtl dl {
+  text-align: right;
+}
+.ui-timepicker-rtl dl dd {
+  margin: 0 65px 10px 10px;
+}
+.editable {
+  border: 1px dashed #808080;
+}
+.editable .icon-move {
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  cursor: move;
+}
+.editable .inplace-input {
+  display: none;
+}
+.editable.inplace .inplace-input {
+  display: initial;
+}
+.editable.inplace .content {
+  display: none;
+}
+.placeholder {
+  color: #808080;
+}
+.description-container,
+.title-container {
+  text-align: center;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.flip-clock {
+  height: 115px;
+  background-color: #000;
+}
+.flip-clock span {
+  display: block;
+  float: left;
+  width: 90px;
+  height: 120px;
+  background: url("/images/flipclock_600x266.png") no-repeat -5px -10px;
+}
+.flip-clock span.image1 {
+  background-position-x: -105px;
+}
+.flip-clock span.image2 {
+  background-position-x: -205px;
+}
+.flip-clock span.image3 {
+  background-position-x: -305px;
+}
+.flip-clock span.image4 {
+  background-position-x: -405px;
+}
+.flip-clock span.image5 {
+  background-position-x: -505px;
+}
+.flip-clock span.image6 {
+  background-position: -5px -143px;
+}
+.flip-clock span.image7 {
+  background-position: -105px -143px;
+}
+.flip-clock span.image8 {
+  background-position: -205px -143px;
+}
+.flip-clock span.image9 {
+  background-position: -305px -143px;
+}
+.flip-clock span.image10 {
+  background-position: -405px -143px;
+}
+.flip-clock span.imageDay {
+  background: none;
+}
+.flip-clock span.imageSep {
+  background: none;
+}
+.flip-clock span.imageSpace {
+  background: none;
+}

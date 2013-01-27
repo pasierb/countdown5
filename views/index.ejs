@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/jquery.countdown.css' />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/jquery-ui-1.10.0.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap-responsive.min.css" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+
+      <a href="#myModal" role="button" class="btn btn-primary btn-large" data-toggle="modal">Launch demo modal</a>
+
+      <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <form action="/create" method="post" accept-charset="utf-8" class="form-horizontal countdown-settings">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Modal header</h3>
+          </div>
+          <div class="modal-body">
+            <ul class="nav nav-tabs" id="myTab">
+              <li class="active"><a href="#home">Home</a></li>
+              <li><a href="#profile">Profile</a></li>
+              <li><a href="#messages">Messages</a></li>
+              <li><a href="#settings">Settings</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="home">
+                <div class="control-group">
+                  <label class="control-label" for="until">Until</label>
+                  <div class="controls">
+                    <input type="text" name="until" class="datetimepicker" />
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="title">Title</label>
+                  <div class="controls">
+                    <input type="text" name="title" />
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="description">Description</label>
+                  <div class="controls">
+                    <textarea name="description" rows="5"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="profile">
+                <div class="control-group">
+                  <label class="control-label" for="background_image">Until</label>
+                  <div class="controls">
+                    <input type="text" name="background_image" />
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="messages">...</div>
+              <div class="tab-pane" id="settings">...</div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button type="submit" class="btn btn-primary">Create</button>
+          </div>
+          <input type="hidden" name="custom_css[title]" />
+          <input type="hidden" name="custom_css[description]" />
+          <input type="hidden" name="custom_css[countdown]" />
+        </form>
+      </div>
+
+      <div class="title-container editable placeholder">
+        <h1 class="content">Title!</h1>
+        <input type="text" name="title-inplace" class="inplace-input" />
+        <i class="icon-move"></i>
+      </div>
+      <div class="countdown-container flip-clock editable">
+        <i class="icon-move"></i>
+      </div>
+      <div class="description-container editable placeholder">
+        <p class="content">Couple words of description.</p>
+        <textarea name="description-inplace" class="inplace-input"></textarea>
+        <i class="icon-move"></i>
+      </div>
+    </div>
+
+    <!-- load scripts late -->
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.0.0.min.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="javascripts/jquery-ui-1.10.0.custom.min.js"></script>
+    <script type="text/javascript" src="javascripts/jquery-ui-timepicker-addon.js"></script>
+    <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="javascripts/application.js"></script>
+  </body>
+</html>
