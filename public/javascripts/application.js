@@ -1,7 +1,7 @@
 window.Countdown5 = {};
 
 $(document).ready(function(){
-    Countdown5.countdownContainer = $(".countdown-container");
+    Countdown5.countdownContainer = $(".countdown-container > .countdown");
     Countdown5.settingsForm = $("form.countdown-settings");
     Countdown5.editableElements = ["title", "description", "countdown"];
     Countdown5.countdownLayout = '<span class="image{d100}"></span><span class="image{d10}"></span><span class="image{d1}"></span>' + 
@@ -12,9 +12,6 @@ $(document).ready(function(){
         '<span class="imageSep"></span>' + 
         '<span class="image{s10}"></span><span class="image{s1}"></span>';
 
-    if (Countdown5.countdownContainer.hasClass("editable")) {
-        Countdown5.countdownLayout += "<i class='icon-move'></i>";
-    }
 
     Countdown5.countdownContainer.countdown({
         until: new Date(Countdown5.countdownContainer.attr("data-until")),
@@ -26,11 +23,47 @@ $(document).ready(function(){
         showButtonPanel: true,
         onSelect: function (dateText, inst) { Countdown5.countdownContainer.countdown('option', 'until', new Date(dateText)); }
     });
+
+    $("input.datetimepicker-inplace").datetimepicker({
+        showButtonPanel: true,
+        onSelect: function (dateText, inst) { 
+            $("input.datetimepicker").val(dateText);
+            Countdown5.countdownContainer.countdown('option', 'until', new Date(dateText)); 
+        }
+    });
   
     $('#myTab a').click(function (e) {
         e.preventDefault();
         $(this).tab('show');
     });
+
+    Countdown5.settingsForm.bind("submit", function () {
+        var that = $(this);
+        $.ajax({
+            url: that.attr("action"),
+            type: "POST",
+            data: that.serialize(),
+            success: function (data, textStatus, jqXHR) {
+                that.attr('action', '/update/'+data.countdown.slug);
+                $("input[name='slug']").val(data.countdown.slug);
+            },
+            error: function (data, textStatus, jqXHR) {
+                
+            }
+        });
+        return false;
+    });
+
+    $("a.x-save").click(function () { 
+        Countdown5.settingsForm.trigger("submit"); 
+        return false;
+    });
+
+    $("a.x-until").click(function () {
+        $(".datetimepicker-inplace").datetimepicker("show");
+        return false;
+    });
+
 
     $("input[name='background_image']", Countdown5.settingsForm).keyup(function () {
         var that = $(this);

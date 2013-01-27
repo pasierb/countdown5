@@ -9,9 +9,38 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">Bootstrap</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="./index.html">Home</a>
+              </li>
+            </ul>
+          </div>
+
+          <a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal">Settings</a>
+
+          <div class="btn-group">
+            <a href="save" title="save" class="btn x-save"><i class="icon-hdd"></i></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-space"></div>
+
     <div class="container">
 
-      <a href="#myModal" role="button" class="btn btn-primary btn-large" data-toggle="modal">Launch demo modal</a>
+      
 
       <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <form action="/create" method="post" accept-charset="utf-8" class="form-horizontal countdown-settings">
@@ -59,10 +88,8 @@
               <div class="tab-pane" id="settings">...</div>
             </div>
           </div>
-          <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-            <button type="submit" class="btn btn-primary">Create</button>
-          </div>
+
+          <input type="hidden" name="slug" />
           <input type="hidden" name="custom_css[title]" />
           <input type="hidden" name="custom_css[description]" />
           <input type="hidden" name="custom_css[countdown]" />
@@ -74,15 +101,20 @@
         <input type="text" name="title-inplace" class="inplace-input" />
         <i class="icon-move"></i>
       </div>
-      <div class="countdown-container flip-clock editable">
-        <i class="icon-move"></i>
+      <div class="countdown-container editable">
+        <div class="countdown flip-clock"></div>
+        <i class='icon-move'></i>
+        <a href="#" title="Set time" class="x-until"><i class="icon-time"></i></a>
       </div>
       <div class="description-container editable placeholder">
         <p class="content">Couple words of description.</p>
         <textarea name="description-inplace" class="inplace-input"></textarea>
         <i class="icon-move"></i>
       </div>
+    
+      <input type='text' name='until-inplace' class='datetimepicker-inplace' />
     </div>
+
 
     <!-- load scripts late -->
     <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>

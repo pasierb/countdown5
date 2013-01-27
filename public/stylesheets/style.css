@@ -29,14 +29,25 @@
 .ui-timepicker-rtl dl dd {
   margin: 0 65px 10px 10px;
 }
+.navbar-space {
+  width: 100%;
+  clear: both;
+  height: 41px;
+}
 .editable {
   border: 1px dashed #808080;
 }
 .editable .icon-move {
   position: absolute;
   right: -15px;
-  top: -15px;
+  top: 0px;
   cursor: move;
+}
+.editable a.x-until {
+  position: absolute;
+  right: -15px;
+  top: 15px;
+  display: block;
 }
 .editable .inplace-input {
   display: none;
@@ -46,6 +57,18 @@
 }
 .editable.inplace .content {
   display: none;
+}
+.datetimepicker-inplace {
+  width: 0px !important;
+  height: 0px !important;
+  position: fixed;
+  top: 60px;
+  left: 40%;
+  border: none !important;
+  background: transparent !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
 }
 .placeholder {
   color: #808080;
@@ -57,9 +80,13 @@
   margin-left: auto;
   margin-right: auto;
 }
+.countdown-container {
+  background-color: #000;
+}
 .flip-clock {
   height: 115px;
-  background-color: #000;
+  background-color: inherit;
+  border: none;
 }
 .flip-clock span {
   display: block;

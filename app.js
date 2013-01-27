@@ -37,6 +37,7 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.post('/create', countdown.create);
+app.post('/update/:id', countdown.update);
 app.get('/show/:id', countdown.show);
 
 http.createServer(app).listen(app.get('port'), function(){
