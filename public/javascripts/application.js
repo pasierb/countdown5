@@ -32,7 +32,7 @@ $(document).ready(function(){
         }
     });
   
-    $('#myTab a').click(function (e) {
+    $('#settingsTab a').click(function (e) {
         e.preventDefault();
         $(this).tab('show');
     });
@@ -44,8 +44,21 @@ $(document).ready(function(){
             type: "POST",
             data: that.serialize(),
             success: function (data, textStatus, jqXHR) {
-                that.attr('action', '/update/'+data.countdown.slug);
-                $("input[name='slug']").val(data.countdown.slug);
+                var link = "http://localhost:3000/show/"+data.countdown.slug,
+                    linkElements;
+
+                if (!that.hasClass("created")) {
+                    linkElements = $(".countdown-link");
+                    that.attr('action', '/update/'+data.countdown.slug);
+                    linkElements.html(link);
+                    linkElements.attr('href',link);
+                    $("input[name='slug']").val(data.countdown.slug);
+                    $(".x-share").removeClass("hidden");
+                    $("#shareModal").modal("show");
+                } else {
+
+                }
+                that.addClass("created");
             },
             error: function (data, textStatus, jqXHR) {
                 
@@ -64,6 +77,11 @@ $(document).ready(function(){
         return false;
     });
 
+    $("a.x-background").click(function () {
+        $("#settingsModal").modal("show");
+        $('#settingsTab a[href="#background"]').tab('show');
+        return false;
+    });
 
     $("input[name='background_image']", Countdown5.settingsForm).keyup(function () {
         var that = $(this);

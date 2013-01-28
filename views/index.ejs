@@ -26,10 +26,11 @@
             </ul>
           </div>
 
-          <a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal">Settings</a>
+          <a href="#settingsModal" role="button" class="btn btn-primary" data-toggle="modal">Settings</a>
 
           <div class="btn-group">
             <a href="save" title="save" class="btn x-save"><i class="icon-hdd"></i></a>
+            <a href="#shareModal" title="share" class="btn x-share hidden" data-toggle="modal"><i class="icon-share"></i></a>
           </div>
 
         </div>
@@ -39,24 +40,31 @@
     <div class="navbar-space"></div>
 
     <div class="container">
+      <a href="#" class="x-background"><i class="icon-picture"></i></a>
 
-      
+      <div id="shareModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Share!</h3>
+        </div>
+        <div class="modal-body">
+          <a href="#" class="countdown-link"></a>
+        </div>
+      </div>
 
-      <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div id="settingsModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <form action="/create" method="post" accept-charset="utf-8" class="form-horizontal countdown-settings">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             <h3 id="myModalLabel">Modal header</h3>
           </div>
           <div class="modal-body">
-            <ul class="nav nav-tabs" id="myTab">
-              <li class="active"><a href="#home">Home</a></li>
-              <li><a href="#profile">Profile</a></li>
-              <li><a href="#messages">Messages</a></li>
-              <li><a href="#settings">Settings</a></li>
+            <ul class="nav nav-tabs" id="settingsTab">
+              <li class="active"><a href="#basic">Home</a></li>
+              <li><a href="#background">Profile</a></li>
             </ul>
             <div class="tab-content">
-              <div class="tab-pane active" id="home">
+              <div class="tab-pane active" id="basic">
                 <div class="control-group">
                   <label class="control-label" for="until">Until</label>
                   <div class="controls">
@@ -76,16 +84,14 @@
                   </div>
                 </div>
               </div>
-              <div class="tab-pane" id="profile">
+              <div class="tab-pane" id="background">
                 <div class="control-group">
                   <label class="control-label" for="background_image">Until</label>
                   <div class="controls">
                     <input type="text" name="background_image" />
                   </div>
                 </div>
-              </div>
-              <div class="tab-pane" id="messages">...</div>
-              <div class="tab-pane" id="settings">...</div>
+              </div>  
             </div>
           </div>
 

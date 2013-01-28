@@ -34,6 +34,15 @@
   clear: both;
   height: 41px;
 }
+.hidden {
+  display: none !important;
+}
+.x-background {
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 50px;
+}
 .editable {
   border: 1px dashed #808080;
 }

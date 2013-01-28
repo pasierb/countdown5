@@ -50,7 +50,7 @@ exports.update = function (req, res) {
 }
 
 exports.show = function (req, res) {
-  Countdown.findOne({'slug': req.params.id}, 'until title description custom_css background_image', function (err, countdown) {
+  Countdown.findOne({'slug': req.params.id}, 'until title description custom_css background_image slug', function (err, countdown) {
     res.render('show', { 
       title: 'Express',
       countdown: countdown
