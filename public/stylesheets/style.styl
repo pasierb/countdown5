@@ -1,5 +1,5 @@
 body
-  background-position center center
+  background-position top center
 
 // css for timepicker 
 .ui-timepicker-div .ui-widget-header
@@ -56,12 +56,6 @@ body
   right -15px
   top 15px
   display block
-.editable .inplace-input
-  display none
-.editable.inplace .inplace-input
-  display initial
-.editable.inplace .content
-  display none
 
 .datetimepicker-inplace 
   width 0px !important
@@ -80,6 +74,12 @@ body
 
 .description-container, .title-container, .countdown-container
   position absolute !important
+.title-container
+  top 25px
+  left 200px
+.description-container
+  top 260px
+  left 200px
 
 .description-container, .title-container
   text-align center
@@ -89,6 +89,8 @@ body
 .countdown-container
   background-color black
   width 942px
+  left 20px
+  top 115px
 
 .flip-clock
   height 115px

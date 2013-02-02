@@ -15,34 +15,6 @@
     </style>
   </head>
   <body>
-    <!--
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="./index.html">Bootstrap</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="">
-                <a href="./index.html">Home</a>
-              </li>
-            </ul>
-          </div>
-
-
-          <div class="btn-group">
-            <a href="#shareModal" title="share" class="btn x-share" data-toggle="modal"><i class="icon-share"></i></a>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    -->
-
     <div class="navbar-space"></div>
 
     <div class="container canvas-container">
@@ -56,11 +28,15 @@
         </div>
       </div>
 
-      <div class="title-container"><h1><%= countdown.title %></h1></div>
+      <div class="title-container">
+        <div class="content"><%- countdown.title %></div>
+      </div>
       <div class="countdown-container">
         <div class="countdown flip-clock" data-until="<%= countdown.until.toJSON() %>"></div>
       </div>
-      <div class="description-container"><p><%= countdown.description %></p></div>
+      <div class="description-container">
+        <div class="content"><%- countdown.description %></div>
+      </div>
     </div>
 
     <!-- load scripts late -->

@@ -39,6 +39,9 @@ $(document).ready(function(){
 
     Countdown5.settingsForm.bind("submit", function () {
         var that = $(this);
+        $("input[name='title']", that).val(CKEDITOR.instances['title-editable'].getData());
+        $("input[name='description']", that).val(CKEDITOR.instances['description-editable'].getData());
+
         $.ajax({
             url: that.attr("action"),
             type: "POST",
@@ -88,22 +91,6 @@ $(document).ready(function(){
         $("body").css("background-image", "url('"+that.val()+"')");
     });
 
-    $("input[name='title']", Countdown5.settingsForm).keyup(function () {
-        var that = $(this),
-            titleContainer = $(".title-container");
-
-        titleContainer.removeClass("placeholder");
-        $("h1", titleContainer).html(that.val());
-    });
-
-    $("textarea[name='description']", Countdown5.settingsForm).keyup(function () {
-        var that = $(this),
-            descriptionContainer = $(".description-container");
-
-        descriptionContainer.removeClass("placeholder");
-        $("p", descriptionContainer).html(that.val());
-    });
-
     $.each(Countdown5.editableElements, function (index, selector) {
         var saveStyle = function (event, ui) { $("input[name='custom_css["+selector+"]']").val($(this).attr("style")); };
         $("."+selector+"-container.editable").draggable({ 
@@ -112,26 +99,5 @@ $(document).ready(function(){
         }).resizable({ 
             stop: saveStyle 
         });
-    });
-
-    $(".title-container h1, .description-container p").click(function () {
-        var that = $(this),
-            parent = that.parent(),
-            inplaceInput = $(".inplace-input", parent);
-        
-        inplaceInput.val($("[name='"+inplaceInput.attr('name').split("-")[0]+"']", Countdown5.settingsForm).val());
-        parent.addClass('inplace');
-        inplaceInput.focus();
-    });
-
-    $(".inplace-input").blur(function () {
-        $(this).parent().removeClass("inplace");
-    }).keyup(function () {
-        var that = $(this),
-            name = that.attr('name').split("-")[0],
-            settingsInput = $("[name='"+name+"']", Countdown5.settingsForm);
-
-        settingsInput.val(that.val());
-        settingsInput.trigger("keyup");
     });
 });

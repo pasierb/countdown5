@@ -71,18 +71,6 @@
                     <input type="text" name="until" class="datetimepicker" />
                   </div>
                 </div>
-                <div class="control-group">
-                  <label class="control-label" for="title">Title</label>
-                  <div class="controls">
-                    <input type="text" name="title" />
-                  </div>
-                </div>
-                <div class="control-group">
-                  <label class="control-label" for="description">Description</label>
-                  <div class="controls">
-                    <textarea name="description" rows="5"></textarea>
-                  </div>
-                </div>
               </div>
               <div class="tab-pane" id="background">
                 <div class="control-group">
@@ -99,12 +87,15 @@
           <input type="hidden" name="custom_css[title]" />
           <input type="hidden" name="custom_css[description]" />
           <input type="hidden" name="custom_css[countdown]" />
+          <input type="hidden" name="title" />
+          <input type="hidden" name="description" />
         </form>
       </div>
 
-      <div class="title-container editable placeholder">
-        <h1 class="content">Title!</h1>
-        <input type="text" name="title-inplace" class="inplace-input" />
+      <div class="title-container editable" >
+        <div class="content" contenteditable="true" id="title-editable">
+          <h1>Title!</h1>
+        </div>
         <i class="icon-move"></i>
       </div>
       <div class="countdown-container editable">
@@ -112,9 +103,10 @@
         <i class='icon-move'></i>
         <a href="#" title="Set time" class="x-until"><i class="icon-time"></i></a>
       </div>
-      <div class="description-container editable placeholder">
-        <p class="content">Couple words of description.</p>
-        <textarea name="description-inplace" class="inplace-input"></textarea>
+      <div class="description-container editable">
+        <div class="content" contenteditable="true" id="description-editable">
+          <p>Couple words of description.</p>
+        </div>
         <i class="icon-move"></i>
       </div>
     
@@ -129,6 +121,7 @@
     <script type="text/javascript" src="javascripts/jquery-ui-1.10.0.custom.min.js"></script>
     <script type="text/javascript" src="javascripts/jquery-ui-timepicker-addon.js"></script>
     <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="javascripts/ckeditor/ckeditor.js"></script>
     <script type="text/javascript" src="javascripts/application.js"></script>
   </body>
 </html>
