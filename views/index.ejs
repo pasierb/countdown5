@@ -9,27 +9,22 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <div class="navbar navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+
       <div class="navbar-inner">
         <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="./index.html">Bootstrap</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="">
-                <a href="./index.html">Home</a>
-              </li>
-            </ul>
-          </div>
 
-          <a href="#settingsModal" role="button" class="btn btn-primary" data-toggle="modal">Settings</a>
+          <a class="brand" href="/">Countdowns</a>
+          
+        
+          <ul class="nav">
+            <li class="">
+              <a href="./index.html">Home</a>
+            </li>
+          </ul>
 
           <div class="btn-group">
-            <a href="save" title="save" class="btn x-save"><i class="icon-hdd"></i></a>
+            <a href="#save" title="save" class="btn x-save"><i class="icon-hdd"></i></a>
             <a href="#shareModal" title="share" class="btn x-share hidden" data-toggle="modal"><i class="icon-share"></i></a>
           </div>
 
@@ -40,7 +35,7 @@
     <div class="navbar-space"></div>
 
     <div class="container canvas-container">
-      <a href="#" class="x-background"><i class="icon-picture"></i></a>
+      <a href="#" class="x-background" rel="tooltip" title="Background" data-description="set background picture url"><i class="icon-picture"></i></a>
 
       <div id="shareModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-header">
@@ -54,15 +49,8 @@
 
       <div id="settingsModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <form action="/create" method="post" accept-charset="utf-8" class="form-horizontal countdown-settings">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="myModalLabel">Modal header</h3>
-          </div>
           <div class="modal-body">
-            <ul class="nav nav-tabs" id="settingsTab">
-              <li class="active"><a href="#basic">Home</a></li>
-              <li><a href="#background">Profile</a></li>
-            </ul>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             <div class="tab-content">
               <div class="tab-pane active" id="basic">
                 <div class="control-group">
@@ -71,10 +59,8 @@
                     <input type="text" name="until" class="datetimepicker" />
                   </div>
                 </div>
-              </div>
-              <div class="tab-pane" id="background">
                 <div class="control-group">
-                  <label class="control-label" for="background_image">Until</label>
+                  <label class="control-label" for="background_image">Background image:</label>
                   <div class="controls">
                     <input type="text" name="background_image" />
                   </div>
@@ -93,7 +79,7 @@
       </div>
 
       <div class="title-container editable" >
-        <div class="content" contenteditable="true" id="title-editable">
+        <div class="content" contenteditable="true" id="title-editable" rel="popover" title="Title" data-content="It must have some title, right?" data-placement="left">
           <h1>Title!</h1>
         </div>
         <i class="icon-move"></i>
@@ -104,7 +90,7 @@
         <a href="#" title="Set time" class="x-until"><i class="icon-time"></i></a>
       </div>
       <div class="description-container editable">
-        <div class="content" contenteditable="true" id="description-editable">
+        <div class="content" contenteditable="true" id="description-editable" rel="popover" title="Description" data-content="Write something about this countdown..." data-placement="bottom">
           <p>Couple words of description.</p>
         </div>
         <i class="icon-move"></i>

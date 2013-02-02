@@ -39,6 +39,12 @@ $(document).ready(function(){
 
     Countdown5.settingsForm.bind("submit", function () {
         var that = $(this);
+
+        if (!$("input[name='until']").val()) {
+            alert('Please set countdown date');
+            return false;
+        }
+
         $("input[name='title']", that).val(CKEDITOR.instances['title-editable'].getData());
         $("input[name='description']", that).val(CKEDITOR.instances['description-editable'].getData());
 
@@ -82,7 +88,7 @@ $(document).ready(function(){
 
     $("a.x-background").click(function () {
         $("#settingsModal").modal("show");
-        $('#settingsTab a[href="#background"]').tab('show');
+        $("input[name='background_image']", Countdown5.settingsForm).focus();
         return false;
     });
 
