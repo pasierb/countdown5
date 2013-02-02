@@ -1,3 +1,6 @@
+body
+  background-position center center
+
 // css for timepicker 
 .ui-timepicker-div .ui-widget-header
   margin-bottom 8px
@@ -23,6 +26,11 @@
 .ui-timepicker-rtl dl dd
   margin 0 65px 10px 10px
 
+.canvas-container
+  position relative
+  height 500px
+  width 1000px
+
 .navbar-space
   width 100%
   clear both
@@ -35,10 +43,10 @@
   display block
   position absolute
   right 10px
-  top 50px
+  top 10px
 .editable
   border 1px dashed gray
-.editable .icon-move
+.editable .icon-move  
   position absolute
   right -15px
   top 0px
@@ -70,6 +78,9 @@
 .placeholder
   color gray
 
+.description-container, .title-container, .countdown-container
+  position absolute !important
+
 .description-container, .title-container
   text-align center
   width 500px
@@ -77,12 +88,14 @@
   margin-right auto
 .countdown-container
   background-color black
+  width 942px
 
 .flip-clock
   height 115px
   background-color inherit
   border none
 .flip-clock span
+  color #ddd
   display block
   float left
   width 90px
@@ -113,5 +126,14 @@
   background none
 .flip-clock span.imageSep
   background none
+  width 25px
+.flip-clock span.imageSep p
+  font-size 80px
+  font-weight bold
+  margin-top 40px
+.flip-clock span.imageSepDay
+  width 80px
+.flip-clock span.imageSepDay p
+  margin-top 60px
 .flip-clock span.imageSpace
   background none

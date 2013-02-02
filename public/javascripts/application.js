@@ -5,11 +5,11 @@ $(document).ready(function(){
     Countdown5.settingsForm = $("form.countdown-settings");
     Countdown5.editableElements = ["title", "description", "countdown"];
     Countdown5.countdownLayout = '<span class="image{d100}"></span><span class="image{d10}"></span><span class="image{d1}"></span>' + 
-        '<span class="imageSep"></span>' + 
+        '<span class="imageSep imageSepDay"><p>d</p></span>' + 
         '<span class="image{h10}"></span><span class="image{h1}"></span>' + 
-        '<span class="imageSep"></span>' + 
+        '<span class="imageSep"><p>:</p></span>' + 
         '<span class="image{m10}"></span><span class="image{m1}"></span>' + 
-        '<span class="imageSep"></span>' + 
+        '<span class="imageSep"><p>:</p></span>' + 
         '<span class="image{s10}"></span><span class="image{s1}"></span>';
 
 
