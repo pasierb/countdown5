@@ -53,7 +53,7 @@ $(document).ready(function(){
             type: "POST",
             data: that.serialize(),
             success: function (data, textStatus, jqXHR) {
-                var link = "http://localhost:3000/show/"+data.countdown.slug,
+                var link = "http://"+location.host+"/show/"+data.countdown.slug,
                     linkElements;
 
                 if (!that.hasClass("created")) {
