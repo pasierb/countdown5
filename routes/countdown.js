@@ -52,7 +52,7 @@ exports.update = function (req, res) {
 exports.show = function (req, res) {
   Countdown.findOne({'slug': req.params.id}, 'until title description custom_css background_image slug', function (err, countdown) {
     res.render('show', { 
-      title: 'Express',
+      title: "Countdown5 - "+countdown.title.replace(/<(?:.|\n)*?>/gm, ''),
       countdown: countdown
     });
   });
